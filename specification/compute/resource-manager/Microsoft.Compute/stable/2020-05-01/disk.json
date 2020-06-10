@@ -1496,16 +1496,8 @@
           "description": "The time when the disk was created."
         },
         "osType": {
-          "type": "string",
-          "description": "The Operating System type.",
-          "enum": [
-            "Windows",
-            "Linux"
-          ],
-          "x-ms-enum": {
-            "name": "OperatingSystemTypes",
-            "modelAsString": false
-          }
+          "$ref": "../../common-types/computeCommonTypes.json#/definitions/OperatingSystemType",
+          "description": "The Operating System type."
         },
         "hyperVGeneration": {
           "type": "string",
@@ -1650,16 +1642,8 @@
           "description": "The time when the snapshot was created."
         },
         "osType": {
-          "type": "string",
-          "description": "The Operating System type.",
-          "enum": [
-            "Windows",
-            "Linux"
-          ],
-          "x-ms-enum": {
-            "name": "OperatingSystemTypes",
-            "modelAsString": false
-          }
+          "$ref": "../../common-types/computeCommonTypes.json#/definitions/OperatingSystemType",
+          "description": "The Operating System type."
         },
         "hyperVGeneration": {
           "type": "string",
@@ -1904,16 +1888,8 @@
     "DiskUpdateProperties": {
       "properties": {
         "osType": {
-          "type": "string",
-          "description": "the Operating System type.",
-          "enum": [
-            "Windows",
-            "Linux"
-          ],
-          "x-ms-enum": {
-            "name": "OperatingSystemTypes",
-            "modelAsString": false
-          }
+          "$ref": "../../common-types/computeCommonTypes.json#/definitions/OperatingSystemType",
+          "description": "the Operating System type."
         },
         "diskSizeGB": {
           "type": "integer",
@@ -1966,16 +1942,8 @@
     "SnapshotUpdateProperties": {
       "properties": {
         "osType": {
-          "type": "string",
-          "description": "the Operating System type.",
-          "enum": [
-            "Windows",
-            "Linux"
-          ],
-          "x-ms-enum": {
-            "name": "OperatingSystemTypes",
-            "modelAsString": false
-          }
+          "$ref": "../../common-types/computeCommonTypes.json#/definitions/OperatingSystemType",
+          "description": "the Operating System type."
         },
         "diskSizeGB": {
           "type": "integer",

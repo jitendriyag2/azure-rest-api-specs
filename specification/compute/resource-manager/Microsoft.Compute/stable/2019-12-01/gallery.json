@@ -1721,16 +1721,8 @@
           "description": "The end of life date of the gallery Application Definition. This property can be used for decommissioning purposes. This property is updatable."
         },
         "supportedOSType": {
-          "type": "string",
-          "description": "This property allows you to specify the supported type of the OS that application is built for. <br><br> Possible values are: <br><br> **Windows** <br><br> **Linux**",
-          "enum": [
-            "Windows",
-            "Linux"
-          ],
-          "x-ms-enum": {
-            "name": "OperatingSystemTypes",
-            "modelAsString": false
-          }
+          "$ref": "../../common-types/computeCommonTypes.json#/definitions/OperatingSystemType",
+          "description": "This property allows you to specify the supported type of the OS that application is built for. <br><br> Possible values are: <br><br> **Windows** <br><br> **Linux**"
         }
       },
       "required": [
@@ -1883,16 +1875,8 @@
           "description": "The release note uri."
         },
         "osType": {
-          "type": "string",
-          "description": "This property allows you to specify the type of the OS that is included in the disk when creating a VM from a managed image. <br><br> Possible values are: <br><br> **Windows** <br><br> **Linux**",
-          "enum": [
-            "Windows",
-            "Linux"
-          ],
-          "x-ms-enum": {
-            "name": "OperatingSystemTypes",
-            "modelAsString": false
-          }
+          "$ref": "../../common-types/computeCommonTypes.json#/definitions/OperatingSystemType",
+          "description": "This property allows you to specify the type of the OS that is included in the disk when creating a VM from a managed image. <br><br> Possible values are: <br><br> **Windows** <br><br> **Linux**"
         },
         "osState": {
           "type": "string",

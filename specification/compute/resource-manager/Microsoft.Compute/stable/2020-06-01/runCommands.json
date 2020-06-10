@@ -326,16 +326,8 @@
           "description": "The VM run command id."
         },
         "osType": {
-          "type": "string",
-          "description": "The Operating System type.",
-          "enum": [
-            "Windows",
-            "Linux"
-          ],
-          "x-ms-enum": {
-            "name": "OperatingSystemTypes",
-            "modelAsString": false
-          }
+          "$ref": "../../common-types/computeCommonTypes.json#/definitions/OperatingSystemType",
+          "description": "The Operating System type."
         },
         "label": {
           "type": "string",
@@ -401,47 +393,12 @@
       ],
       "description": "The List Virtual Machine operation response."
     },
-    "InstanceViewStatus": {
-      "properties": {
-        "code": {
-          "type": "string",
-          "description": "The status code."
-        },
-        "level": {
-          "type": "string",
-          "description": "The level code.",
-          "enum": [
-            "Info",
-            "Warning",
-            "Error"
-          ],
-          "x-ms-enum": {
-            "name": "StatusLevelTypes",
-            "modelAsString": false
-          }
-        },
-        "displayStatus": {
-          "type": "string",
-          "description": "The short localizable label for the status."
-        },
-        "message": {
-          "type": "string",
-          "description": "The detailed status message, including for alerts and error messages."
-        },
-        "time": {
-          "type": "string",
-          "format": "date-time",
-          "description": "The time of the status."
-        }
-      },
-      "description": "Instance view status."
-    },
     "RunCommandResult": {
       "properties": {
         "value": {
           "type": "array",
           "items": {
-            "$ref": "#/definitions/InstanceViewStatus"
+            "$ref": "../../common-types/computeCommonTypes.json#/definitions/InstanceViewStatus"
           },
           "description": "Run command operation response."
         }

@@ -6486,41 +6486,6 @@
         "modelAsString": true
       }
     },
-    "InstanceViewStatus": {
-      "properties": {
-        "code": {
-          "type": "string",
-          "description": "The status code."
-        },
-        "level": {
-          "type": "string",
-          "description": "The level code.",
-          "enum": [
-            "Info",
-            "Warning",
-            "Error"
-          ],
-          "x-ms-enum": {
-            "name": "StatusLevelTypes",
-            "modelAsString": false
-          }
-        },
-        "displayStatus": {
-          "type": "string",
-          "description": "The short localizable label for the status."
-        },
-        "message": {
-          "type": "string",
-          "description": "The detailed status message, including for alerts and error messages."
-        },
-        "time": {
-          "type": "string",
-          "format": "date-time",
-          "description": "The time of the status."
-        }
-      },
-      "description": "Instance view status."
-    },
     "AvailabilitySetProperties": {
       "properties": {
         "platformUpdateDomainCount": {
@@ -6548,7 +6513,7 @@
           "readOnly": true,
           "type": "array",
           "items": {
-            "$ref": "#/definitions/InstanceViewStatus"
+            "$ref": "../../common-types/computeCommonTypes.json#/definitions/InstanceViewStatus"
           },
           "description": "The resource status information."
         }
@@ -6630,7 +6595,7 @@
       ],
       "properties": {
         "colocationStatus": {
-          "$ref": "#/definitions/InstanceViewStatus",
+          "$ref": "../../common-types/computeCommonTypes.json#/definitions/InstanceViewStatus",
           "description": "Describes colocation status of a resource in the Proximity Placement Group."
         }
       }
@@ -6674,7 +6639,7 @@
           "description": "A list of references to all availability sets in the proximity placement group."
         },
         "colocationStatus": {
-          "$ref": "#/definitions/InstanceViewStatus",
+          "$ref": "../../common-types/computeCommonTypes.json#/definitions/InstanceViewStatus",
           "description": "Describes colocation status of the Proximity Placement Group."
         }
       },
@@ -6879,7 +6844,7 @@
         "statuses": {
           "type": "array",
           "items": {
-            "$ref": "#/definitions/InstanceViewStatus"
+            "$ref": "../../common-types/computeCommonTypes.json#/definitions/InstanceViewStatus"
           },
           "description": "The resource status information."
         }
@@ -7224,14 +7189,14 @@
         "substatuses": {
           "type": "array",
           "items": {
-            "$ref": "#/definitions/InstanceViewStatus"
+            "$ref": "../../common-types/computeCommonTypes.json#/definitions/InstanceViewStatus"
           },
           "description": "The resource status information."
         },
         "statuses": {
           "type": "array",
           "items": {
-            "$ref": "#/definitions/InstanceViewStatus"
+            "$ref": "../../common-types/computeCommonTypes.json#/definitions/InstanceViewStatus"
           },
           "description": "The resource status information."
         }
@@ -7521,16 +7486,8 @@
     "OSDiskImage": {
       "properties": {
         "operatingSystem": {
-          "type": "string",
-          "description": "The operating system of the osDiskImage.",
-          "enum": [
-            "Windows",
-            "Linux"
-          ],
-          "x-ms-enum": {
-            "name": "OperatingSystemTypes",
-            "modelAsString": false
-          }
+          "$ref": "../../common-types/computeCommonTypes.json#/definitions/OperatingSystemType",
+          "description": "The operating system of the osDiskImage."
         }
       },
       "required": [
@@ -8137,16 +8094,8 @@
     "OSDisk": {
       "properties": {
         "osType": {
-          "type": "string",
-          "description": "This property allows you to specify the type of the OS that is included in the disk if creating a VM from user-image or a specialized VHD. <br><br> Possible values are: <br><br> **Windows** <br><br> **Linux**",
-          "enum": [
-            "Windows",
-            "Linux"
-          ],
-          "x-ms-enum": {
-            "name": "OperatingSystemTypes",
-            "modelAsString": false
-          }
+          "$ref": "../../common-types/computeCommonTypes.json#/definitions/OperatingSystemType",
+          "description": "This property allows you to specify the type of the OS that is included in the disk if creating a VM from user-image or a specialized VHD. <br><br> Possible values are: <br><br> **Windows** <br><br> **Linux**"
         },
         "encryptionSettings": {
           "$ref": "#/definitions/DiskEncryptionSettings",
@@ -8635,7 +8584,7 @@
           "description": "Specifies the version of the script handler."
         },
         "status": {
-          "$ref": "#/definitions/InstanceViewStatus",
+          "$ref": "../../common-types/computeCommonTypes.json#/definitions/InstanceViewStatus",
           "description": "The extension handler status."
         }
       },
@@ -8657,7 +8606,7 @@
         "statuses": {
           "type": "array",
           "items": {
-            "$ref": "#/definitions/InstanceViewStatus"
+            "$ref": "../../common-types/computeCommonTypes.json#/definitions/InstanceViewStatus"
           },
           "description": "The resource status information."
         }
@@ -8680,7 +8629,7 @@
         "statuses": {
           "type": "array",
           "items": {
-            "$ref": "#/definitions/InstanceViewStatus"
+            "$ref": "../../common-types/computeCommonTypes.json#/definitions/InstanceViewStatus"
           },
           "description": "The resource status information."
         }
@@ -8701,7 +8650,7 @@
         },
         "status": {
           "readOnly": true,
-          "$ref": "#/definitions/InstanceViewStatus",
+          "$ref": "../../common-types/computeCommonTypes.json#/definitions/InstanceViewStatus",
           "description": "The boot diagnostics status information for the VM. <br><br> NOTE: It will be set only if there are errors encountered in enabling boot diagnostics."
         }
       },
@@ -8876,7 +8825,7 @@
         "statuses": {
           "type": "array",
           "items": {
-            "$ref": "#/definitions/InstanceViewStatus"
+            "$ref": "../../common-types/computeCommonTypes.json#/definitions/InstanceViewStatus"
           },
           "description": "The resource status information."
         }
@@ -9167,16 +9116,8 @@
     "ImageOSDisk": {
       "properties": {
         "osType": {
-          "type": "string",
-          "description": "This property allows you to specify the type of the OS that is included in the disk if creating a VM from a custom image. <br><br> Possible values are: <br><br> **Windows** <br><br> **Linux**",
-          "enum": [
-            "Windows",
-            "Linux"
-          ],
-          "x-ms-enum": {
-            "name": "OperatingSystemTypes",
-            "modelAsString": false
-          }
+          "$ref": "../../common-types/computeCommonTypes.json#/definitions/OperatingSystemType",
+          "description": "This property allows you to specify the type of the OS that is included in the disk if creating a VM from a custom image. <br><br> Possible values are: <br><br> **Windows** <br><br> **Linux**"
         },
         "osState": {
           "type": "string",
@@ -9511,16 +9452,8 @@
           "description": "Specifies the size of the operating system disk in gigabytes. This element can be used to overwrite the size of the disk in a virtual machine image. <br><br> This value cannot be larger than 1023 GB"
         },
         "osType": {
-          "type": "string",
-          "description": "This property allows you to specify the type of the OS that is included in the disk if creating a VM from user-image or a specialized VHD. <br><br> Possible values are: <br><br> **Windows** <br><br> **Linux**",
-          "enum": [
-            "Windows",
-            "Linux"
-          ],
-          "x-ms-enum": {
-            "name": "OperatingSystemTypes",
-            "modelAsString": false
-          }
+          "$ref": "../../common-types/computeCommonTypes.json#/definitions/OperatingSystemType",
+          "description": "This property allows you to specify the type of the OS that is included in the disk if creating a VM from user-image or a specialized VHD. <br><br> Possible values are: <br><br> **Windows** <br><br> **Linux**"
         },
         "image": {
           "$ref": "#/definitions/VirtualHardDisk",
@@ -10611,7 +10544,7 @@
         "statuses": {
           "type": "array",
           "items": {
-            "$ref": "#/definitions/InstanceViewStatus"
+            "$ref": "../../common-types/computeCommonTypes.json#/definitions/InstanceViewStatus"
           },
           "description": "The resource status information."
         },
@@ -11044,7 +10977,7 @@
         "statuses": {
           "type": "array",
           "items": {
-            "$ref": "#/definitions/InstanceViewStatus"
+            "$ref": "../../common-types/computeCommonTypes.json#/definitions/InstanceViewStatus"
           },
           "description": "The resource status information."
         },
@@ -11111,7 +11044,7 @@
       "properties": {
         "status": {
           "readOnly": true,
-          "$ref": "#/definitions/InstanceViewStatus",
+          "$ref": "../../common-types/computeCommonTypes.json#/definitions/InstanceViewStatus",
           "description": "The health status information for the VM."
         }
       },
